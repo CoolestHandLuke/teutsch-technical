@@ -6,6 +6,7 @@ const CalculatorContext = createContext<CalculatorInputValue>(['']);
 export const CalculatorProvider = ({ children }: any) => {
     /**
      * I'm using useContext to manage the state for the entire app since its the only state management tool I know so far. currentInput keeps track of whatever is currently being entered in to the calculator
+     * @todo Add comma formatting to large numbers (x,xxx,xxx.xx)
      */
     const [currentInput, setCurrentInput] = useState<string>('');
 
@@ -108,7 +109,6 @@ export const CalculatorProvider = ({ children }: any) => {
             } else if (inputs[i] === '^') {
                 answer = answer ** Number(inputs[i + 1]);
             }
-            console.log(answer);
         }
         setCurrentInput(String(answer));
     };
