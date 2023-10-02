@@ -5,7 +5,7 @@ const NumberAndOperationsButtons = () => {
     const { handleClick } = useContext(CalculatorContext);
     return (
         <div className="numbers-button-container">
-            <div>
+            <div className="buttons-row">
                 <button
                     value={'7'}
                     onClick={handleClick}
@@ -30,12 +30,12 @@ const NumberAndOperationsButtons = () => {
                 <button
                     value={'+'}
                     onClick={handleClick}
-                    className="calculator-button"
+                    className="calculator-button operator-button"
                 >
                     +
                 </button>
             </div>
-            <div>
+            <div className="buttons-row">
                 <button
                     value={'4'}
                     onClick={handleClick}
@@ -60,12 +60,12 @@ const NumberAndOperationsButtons = () => {
                 <button
                     value={'-'}
                     onClick={handleClick}
-                    className="calculator-button"
+                    className="calculator-button operator-button"
                 >
                     -
                 </button>
             </div>
-            <div>
+            <div className="buttons-row">
                 <button
                     value={'1'}
                     onClick={handleClick}
@@ -88,14 +88,14 @@ const NumberAndOperationsButtons = () => {
                     3
                 </button>
                 <button
-                    value={'x'}
+                    value={'*'}
                     onClick={handleClick}
-                    className="calculator-button"
+                    className="calculator-button operator-button"
                 >
-                    x
+                    *
                 </button>
             </div>
-            <div>
+            <div className="buttons-row">
                 <button
                     value={'.'}
                     onClick={handleClick}
@@ -111,16 +111,16 @@ const NumberAndOperationsButtons = () => {
                     0
                 </button>
                 <button
-                    value={'+/-'}
+                    value={'^'}
                     onClick={handleClick}
-                    className="calculator-button"
+                    className="calculator-button operator-button"
                 >
-                    +/-
+                    ^
                 </button>
                 <button
                     value={'/'}
                     onClick={handleClick}
-                    className="calculator-button"
+                    className="calculator-button operator-button"
                 >
                     /
                 </button>

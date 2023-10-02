@@ -7,14 +7,19 @@ html {
 }
 
 :root {
-    --main-color: #233142;
-    --secondary-color: #455d7a;
-    --tertiary-color: #f95959;
-    --fourth-color: #e3e3e3;
+    --main-color: #17181a;
+    --button-grey: #303136;
+    --button-blue: #005db2;
+    --text-blue: #329cfd;
+    --background-blue: #a0d7ff;
+    --button-grey-2: #606061;
+    --text-grey: #a0a2a3;
+    --warning: #ffcc00;
+    --danger: #ff0505;
 }
 
 .main {
-    background: var(--secondary-color);
+    background: var(--main-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,7 +34,7 @@ html {
     margin: 0 2rem;
     background: var(--main-color);
     border: 1px solid var(--base-color);
-    border-radius: clamp(10px, 4vw, 20px);
+    border-radius: clamp(10px, 4vw, 40px);
     box-shadow: 0 0 10px 1px rgba(var(--base-color-rgb), 0.5);
     padding: clamp(15px, 5vw, 25px);
 }
@@ -48,9 +53,8 @@ html {
     border: none;
     padding: 20px;
     margin-bottom: 4rem;
-    border-radius: 10px;
     /* box-shadow: inset 0 0 10px 1px rgba(var(--base-color-rgb), 0.25); */
-    border: 1px solid rgba(var(--base-color-rgb), 0.4);
+    border-bottom: 1px solid rgba(var(--base-color-rgb), 0.4);
 }
 
 .buttons-container {
@@ -62,9 +66,17 @@ html {
 }
 
 .numbers-button-container {
-    width: fit-content;
     display: flex;
+    align-items: center;
     flex-direction: column;
+    width: 90%;
+    flex-grow: 1;
+}
+
+.buttons-row {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
 .calculate-buttons {
@@ -84,22 +96,53 @@ html {
 
 .calculator-button {
     font-family: 'Roboto';
-    font-size: large;
+    font-size: 1.5rem;
     flex: 1;
-    background: var(--fourth-color);
-    border-radius: 5px;
+    background: var(--button-grey);
+    color: var(--text-blue);
+    border: none;
+    border-radius: 15px;
     margin: 5px 5px;
     min-width: 75px;
     min-height: 50px;
+    transition: all 0.1s ease-in-out;
+}
+
+.calculator-button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px 1px rgba(var(--base-color-rgb), 0.5);
+    transform: scale(1.05);
+    filter: brightness(125%);
+}
+
+.operator-button {
+    background: var(--button-blue);
 }
 
 .equals {
-    background: var(--tertiary-color);
+    background: var(--text-blue);
     color: white;
 }
 
 .delete,
 .reset {
-    background: var(--secondary-color);
+    background: var(--button-grey-2);
+}
+
+.delete {
+    color: var(--warning);
+}
+
+.delete:hover {
+    background: var(--warning);
+    color: var(--button-grey-2);
+}
+
+.reset {
+    color: var(--danger);
+}
+
+.reset:hover {
+    background: var(--danger);
     color: white;
 }
