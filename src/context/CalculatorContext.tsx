@@ -87,6 +87,7 @@ export const CalculatorProvider = ({ children }: any) => {
                 return prevState + ' ';
             });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [handleKeyEvent]);
 
     /**
